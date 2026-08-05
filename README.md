@@ -6,15 +6,6 @@ Atualmente, estou colocando a mão na massa em um **projeto profissional de coop
 
 ---
 
-## 🚀 Sobre mim
-
-- 🎓 Estudante de Engenharia de Software (1º semestre)
-- 💻 Desenvolvendo um projeto profissional full stack (backend + frontend)
-- 🌱 Aprendendo constantemente e buscando evoluir na área de tecnologia
-- 🤝 Acredito em colaboração, diversidade e ética como pilares de bons projetos
-
----
-
 ## 🧠 Minhas Habilidades
 
 ### Back-End
@@ -55,11 +46,3 @@ Atualmente, estou colocando a mão na massa em um **projeto profissional de coop
 
 - 🔗 [TM Hub](https://github.com/foxtec198/tmhub) — Painel executivo full stack (React + Flask + PostgreSQL) para centralizar operações administrativas de empresas com múltiplas filiais, com autenticação JWT e controle de acesso por filial.
 - 🔗 [API TM Hub](https://github.com/foxtec198/api_tmhub) — API REST em Flask que dá suporte ao TM Hub, com regras de negócio, permissões e eventos em tempo real via Socket.IO.
----
-
-## 🎯 Interesses de desenvolvimento
-
-- Segurança de aplicações web
-- Testes de penetração (pentest)
-- Boas práticas de autenticação e proteção de dados
-- Desenvolvimento full stack
