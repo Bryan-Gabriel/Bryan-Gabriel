@@ -43,3 +43,7 @@ Atualmente, estou colocando a mão na massa em um **projeto profissional de coop
 
 - 🔗 [TM Hub](https://github.com/foxtec198/tmhub) — Painel executivo full stack (React + Flask + PostgreSQL) para centralizar operações administrativas de empresas com múltiplas filiais, com autenticação JWT e controle de acesso por filial.
 - 🔗 [API TM Hub](https://github.com/foxtec198/api_tmhub) — API REST em Flask que dá suporte ao TM Hub, com regras de negócio, permissões e eventos em tempo real via Socket.IO.
+---
+
+
+### [![GitHub Stats](https://github-stats-extended.vercel.app/api?username=Bryan-Gabriel&custom_title=GitHub%20Stats&show_icons=true&include_all_commits=true&theme=react)](https://github-stats-extended.vercel.app/api?username=Bryan-Gabriel&custom_title=GitHub%20Stats&show_icons=true&include_all_commits=true&theme=react)
