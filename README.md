@@ -24,11 +24,7 @@ Atualmente, estou colocando a mão na massa em um **projeto profissional de coop
 ### Bancos de Dados
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-
-### Cibersegurança (Em estudo)
-
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
-![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
 ### Plataformas
 
@@ -39,6 +35,7 @@ Atualmente, estou colocando a mão na massa em um **projeto profissional de coop
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![DBeaver](https://img.shields.io/badge/Dbeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white)
 
 ---
 
