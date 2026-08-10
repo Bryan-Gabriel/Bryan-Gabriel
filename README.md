@@ -6,7 +6,7 @@ Atualmente, estou colocando a mão na massa em um **projeto profissional de coop
 
 ---
 
-## 🧠 Minhas Habilidades
+## Minhas Habilidades
 
 ### Back-End
 
@@ -42,7 +42,7 @@ Atualmente, estou colocando a mão na massa em um **projeto profissional de coop
 
 ---
 
-## 📌 Projetos em destaque
+## Projetos em destaque
 
 - 🔗 [TM Hub](https://github.com/foxtec198/tmhub) — Painel executivo full stack (React + Flask + PostgreSQL) para centralizar operações administrativas de empresas com múltiplas filiais, com autenticação JWT e controle de acesso por filial.
 - 🔗 [API TM Hub](https://github.com/foxtec198/api_tmhub) — API REST em Flask que dá suporte ao TM Hub, com regras de negócio, permissões e eventos em tempo real via Socket.IO.
