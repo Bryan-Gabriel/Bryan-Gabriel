@@ -1,5 +1,4 @@
 """Gera cartões únicos de atividade pública e dos privados autorizados."""
-
 import json
 import os
 import re
@@ -19,15 +18,12 @@ END = "<!-- PROFILE_STATS_END -->"
 LOGIN = re.compile(r"[A-Za-z0-9][A-Za-z0-9-]{0,38}\Z")
 REPO = re.compile(r"[A-Za-z0-9._-]+\Z")
 
-
 class StatsError(Exception):
     """Mensagem segura para logs públicos."""
-
 
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self, request, fp, code, msg, headers, newurl):
         return None
-
 
 class GitHub:
     def __init__(self, token):
@@ -62,7 +58,6 @@ class GitHub:
         except (ValueError, UnicodeDecodeError):
             raise StatsError("Resposta inválida da API do GitHub.") from None
 
-
 def config(root=ROOT, environment=None):
     values = dict(os.environ if environment is None else environment)
     if values.get("GITHUB_ACTIONS", "").lower() != "true":
@@ -93,7 +88,6 @@ def config(root=ROOT, environment=None):
             repos.append(name)
     return user, token, repos
 
-
 def search(api, endpoint, query):
     def fetch(page):
         result = api.get(endpoint, {
@@ -116,7 +110,6 @@ def search(api, endpoint, query):
     if len(items) != count:
         raise StatsError("Busca mudou durante a paginação; tente novamente.")
     return items
-
 
 def collect(api, user, repos, today):
     repo_visibility = {}
@@ -203,43 +196,71 @@ def streaks(days, today):
             current = run
     return current, longest
 
-
-def shell(title, subtitle, content, height):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-label="{escape(title)}">
+def svg_document(label, content, height):
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-label="{escape(label)}">
 <style>
-.title{{fill:#f4fff4;font:700 22px Arial,sans-serif}}.sub{{fill:#b4c9b8;font:13px Arial,sans-serif}}
-.label{{fill:#bfd3c3;font:13px Arial,sans-serif}}.value{{fill:#8df3a0;font:700 34px Arial,sans-serif}}
-.bar{{fill:#5dcf77;transform-origin:left;animation:grow 1.1s ease-out both}}.fade{{animation:appear .8s ease-out both}}
-@keyframes appear{{from{{opacity:0;transform:translateY(5px)}}to{{opacity:1;transform:translateY(0)}}}}
-@keyframes grow{{from{{opacity:0;transform:scaleX(0)}}to{{opacity:1;transform:scaleX(1)}}}}
-@media(prefers-reduced-motion:reduce){{.bar,.fade{{animation:none}}}}
+.number{{fill:#f0f6fc;font:600 30px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}
+.label{{fill:#8b949e;font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}
+.percent{{fill:#8b949e;font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}
+.rule{{stroke:#30363d;stroke-width:1}}
 </style>
-<rect width="719" height="{height-1}" x=".5" y=".5" rx="16" fill="#141b16" stroke="#304637"/>
-<text class="title" x="30" y="44">{escape(title)}</text><text class="sub" x="30" y="67">{escape(subtitle)}</text>
+<rect width="720" height="{height}" fill="#0d1117"/>
 {content}</svg>
 '''
 
-
-def metrics(title, subtitle, entries):
-    parts = []
-    for index, (label, value) in enumerate(entries):
-        x = 30 + 225 * index
-        parts.append(f'<g class="fade" style="animation-delay:{index*140}ms"><text class="value" x="{x}" y="142">{value:,}</text><text class="label" x="{x}" y="169">{escape(label)}</text></g>')
-    return shell(title, subtitle, "\n".join(parts), 198)
-
+def metrics(label, entries):
+    parts = ['<path class="rule" d="M240 15V81 M480 15V81"/>']
+    for index, (entry_label, value) in enumerate(entries):
+        x = 20 + 240 * index
+        parts.append(
+            f'<text class="number" x="{x}" y="48">{value:,}</text>'
+            f'<text class="label" x="{x}" y="74">{escape(entry_label)}</text>'
+        )
+    return svg_document(label, "\n".join(parts), 96)
 
 def language_card(languages):
     total = sum(languages.values())
     parts = []
     if not total:
-        parts.append('<text class="label" x="30" y="116">Sem linguagens detectadas.</text>')
-    for index, (language, size) in enumerate(sorted(languages.items(), key=lambda row: (-row[1], row[0]))[:5]):
-        y = 104 + index * 38
-        percent = 100 * size / total
-        width = max(2, round(410 * size / total))
-        parts.append(f'<text class="label" x="30" y="{y}">{escape(language[:28])}</text><rect x="215" y="{y-15}" width="410" height="12" rx="6" fill="#304637"/><rect class="bar" x="215" y="{y-15}" width="{width}" height="12" rx="6" style="animation-delay:{index*120}ms"/><text class="label" x="640" y="{y}">{percent:.1f}%</text>')
-    return shell("Linguagens dos projetos analisados", "Bytes dos repositórios; não apenas código de minha autoria", "\n".join(parts), 310)
+        return svg_document("Linguagens dos repositórios", '<text class="label" x="20" y="40">Sem dados de linguagens</text>', 64)
 
+    colors = {
+        "Python": "#3572a5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6",
+        "HTML": "#e34c26", "CSS": "#563d7c", "Java": "#b07219",
+        "C#": "#178600", "C++": "#f34b7d", "Go": "#00add8",
+        "Rust": "#dea584", "Shell": "#89e051", "PHP": "#4f5d95",
+    }
+    fallback = ("#8b949e", "#d29922", "#a371f7", "#db61a2", "#7ee787")
+    ranked = sorted(languages.items(), key=lambda row: (-row[1], row[0]))
+    entries = ranked[:5]
+    remainder = sum(size for _, size in ranked[5:])
+    if remainder:
+        entries.append(("Outras", remainder))
+
+    bar = [
+        '<clipPath id="language-track"><rect x="20" y="8" width="680" height="9" rx="4.5"/></clipPath>',
+        '<g clip-path="url(#language-track)">',
+    ]
+    legend = []
+    cursor = 20.0
+    for index, (language, size) in enumerate(entries):
+        color = colors.get(language, fallback[index % len(fallback)])
+        width = 680 * size / total
+        bar.append(
+            f'<rect x="{cursor:.2f}" y="8" width="{width:.2f}" height="9" fill="{color}"/>'
+        )
+        cursor += width
+        x = 20 if index < 3 else 375
+        y = 48 + (index % 3) * 28
+        legend.append(
+            f'<circle cx="{x+5}" cy="{y-5}" r="5" fill="{color}"/>'
+            f'<text class="label" x="{x+18}" y="{y}">{escape(language[:22])}</text>'
+            f'<text class="percent" x="{x+325}" y="{y}" text-anchor="end">{100*size/total:.1f}%</text>'
+        )
+    parts.extend(bar)
+    parts.append("</g>")
+    parts.extend(legend)
+    return svg_document("Linguagens dos repositórios", "\n".join(parts), 124)
 
 def replace_readme(readme):
     if readme.count(START) != 1 or readme.count(END) != 1:
@@ -247,18 +268,17 @@ def replace_readme(readme):
     begin = readme.index(START)
     end = readme.index(END, begin) + len(END)
     block = f"""{START}
-![Atividade pública e privada autorizada](assets/profile-activity.svg)
+![Atividade Total](assets/profile-activity.svg)
 
 ## Estatísticas
 
-![Commits, pull requests e issues públicos e privados](assets/profile-contributions.svg)
+![Contribuição Total](assets/profile-contributions.svg)
 
-![Linguagens dos projetos públicos e privados autorizados](assets/profile-languages.svg)
+### Linguagens
 
-<sub>Inclui atividade pública e privados autorizados. Dias ativos: commits, PRs ou issues. Totais do ano em UTC. Nomes dos projetos privados não são publicados.</sub>
+![Linguagens Mais Utilizadas](assets/profile-languages.svg)
 {END}"""
     return readme[:begin] + block + readme[end:]
-
 
 def write_if_changed(path, content):
     if path.exists() and path.read_text(encoding="utf-8") == content:
@@ -268,15 +288,14 @@ def write_if_changed(path, content):
     temporary.write_text(content, encoding="utf-8")
     temporary.replace(path)
 
-
 def main():
     user, token, repos = config()
     today = datetime.now(timezone.utc).date()
     totals, total_events, days, languages = collect(GitHub(token), user, repos, today)
     current, longest = streaks(days, today)
     outputs = {
-        "profile-activity.svg": metrics("Atividade no GitHub", "Público + privados autorizados · histórico de contribuições", [("Contribuições", total_events), ("Sequência atual", current), ("Maior sequência", longest)]),
-        "profile-contributions.svg": metrics("Estatísticas", f"{today.year} UTC · público + privados autorizados", [("Commits", totals["commits"]), ("Pull requests", totals["prs"]), ("Issues", totals["issues"])]),
+        "profile-activity.svg": metrics("Atividade no GitHub", [("Contribuições", total_events), ("Sequência atual", current), ("Maior sequência", longest)]),
+        "profile-contributions.svg": metrics("Estatísticas", [("Commits", totals["commits"]), ("Pull requests", totals["prs"]), ("Issues", totals["issues"])]),
         "profile-languages.svg": language_card(languages),
     }
     published = "".join(outputs.values()).lower()
@@ -288,7 +307,6 @@ def main():
         write_if_changed(ROOT / "assets" / name, content)
     write_if_changed(readme, updated)
     print("Cartões combinados atualizados sem publicar credenciais ou nomes privados.")
-
 
 if __name__ == "__main__":
     try:
