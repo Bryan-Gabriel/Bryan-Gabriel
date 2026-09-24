@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="198" viewBox="0 0 720 198" role="img" aria-label="Estatísticas">
+<style>
+.title{fill:#f4fff4;font:700 22px Arial,sans-serif}.sub{fill:#b4c9b8;font:13px Arial,sans-serif}
+.label{fill:#bfd3c3;font:13px Arial,sans-serif}.value{fill:#8df3a0;font:700 34px Arial,sans-serif}
+.bar{fill:#5dcf77;transform-origin:left;animation:grow 1.1s ease-out both}.fade{animation:appear .8s ease-out both}
+@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes grow{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.bar,.fade{animation:none}}
+</style>
+<rect width="719" height="197" x=".5" y=".5" rx="16" fill="#141b16" stroke="#304637"/>
+<text class="title" x="30" y="44">Estatísticas</text><text class="sub" x="30" y="67">2026 UTC · público + privados autorizados</text>
+<g class="fade" style="animation-delay:0ms"><text class="value" x="30" y="142">200</text><text class="label" x="30" y="169">Commits</text></g>
+<g class="fade" style="animation-delay:140ms"><text class="value" x="255" y="142">94</text><text class="label" x="255" y="169">Pull requests</text></g>
+<g class="fade" style="animation-delay:280ms"><text class="value" x="480" y="142">0</text><text class="label" x="480" y="169">Issues</text></g></svg>
