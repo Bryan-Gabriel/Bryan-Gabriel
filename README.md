@@ -1,8 +1,10 @@
-# Olá, seja bem-vindo(a)! 👋
+# Olá! Seja Bem Vindo 👋
 
-Meu nome é Bryan. Sou estudante de **Engenharia de Software**, no início da minha jornada profissional e movido por uma paixão genuína por tecnologia.
+Atualmente em formação na área de **Engenharia de Software**. Tenho interesse em desenvolvimento full stack, automação e cibersegurança.
 
-Meu principal interesse atual é **cibersegurança**. Atualmente, participo de um projeto profissional colaborativo, desenvolvendo soluções full stack e aplicando boas práticas de segurança desde a concepção.
+Participo do desenvolvimento de projetos colaborativos como **Hubbix** e **TM Hub**, conectando minha experiência com processos de negócio à construção de sistemas úteis, seguros e fáceis de usar.
+
+[LinkedIn](https://www.linkedin.com/in/bryan-gabriel-ribeiro-600b07427/)
 
 ---
 
@@ -43,18 +45,30 @@ Meu principal interesse atual é **cibersegurança**. Atualmente, participo de u
 
 ---
 
-## Atualmente estudando
+## Projetos em destaque
 
-- Cibersegurança aplicada ao desenvolvimento web
-- Autenticação, autorização e controle de acesso por perfil
-- Automação de processos com Python e Playwright
+### Hubbix
+
+- **Hubbix API** — API modular em Flask que reúne serviços e regras de negócio das soluções Hubbix.
+
+- **Hubbix Gourmet** — Sistema de gestão para restaurantes e outros negócios de alimentação.
+
+- **Hubbix Manager** — Sistema de gestão comercial, vendas e ordens de serviço.
+
+- **Hubbix Panel** — Painel para administrar sites e páginas de clientes.
+
+- **Hubbix Site** — Site institucional em React e Vite, com páginas de apresentação das soluções. Repositório privado.
+
+### TM Hub
+
+- **TM Hub** — Painel executivo full stack em React para centralizar operações administrativas de empresas com múltiplas filiais, com autenticação JWT e controle de acesso por filial.
+
+- **API TM Hub** — API REST em Flask e PostgreSQL que sustenta o TM Hub, com regras de negócio, permissões e eventos em tempo real via Socket.IO.
 
 ---
 
-## Projetos em destaque
+## Atividade no GitHub
 
-- 🔗 [TM Hub](https://github.com/foxtec198/tmhub) — Painel executivo full stack em React para centralizar operações administrativas de empresas com múltiplas filiais, com autenticação JWT e controle de acesso por filial.
+<!-- PROFILE_STATS_START -->
 
-- 🔗 [API TM Hub](https://github.com/foxtec198/api_tmhub) — API REST em Flask e PostgreSQL que sustenta o TM Hub, com regras de negócio, permissões e eventos em tempo real via Socket.IO.
-
-- 🔗 [TM Hub Agent](https://github.com/foxtec198/agent_tmhub) — Agente local em Python integrado ao TM Hub via Socket.IO, responsável por executar automações RPA.
+<!-- PROFILE_STATS_END -->
