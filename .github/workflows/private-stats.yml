@@ -2,7 +2,8 @@ name: Atualizar estatisticas completas do perfil
 
 on:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '0 17 * * *'
+      timezone: 'America/Sao_Paulo'
   workflow_dispatch:
 
 permissions:
