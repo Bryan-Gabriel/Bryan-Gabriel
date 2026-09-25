@@ -7,6 +7,6 @@
 </style>
 <rect width="720" height="96" fill="#0d1117"/>
 <path class="rule" d="M240 15V81 M480 15V81"/>
-<text class="number" x="20" y="48">289</text><text class="label" x="20" y="74">Contribuições</text>
-<text class="number" x="260" y="48">4</text><text class="label" x="260" y="74">Sequência atual</text>
+<text class="number" x="20" y="48">302</text><text class="label" x="20" y="74">Contribuições</text>
+<text class="number" x="260" y="48">5</text><text class="label" x="260" y="74">Sequência atual</text>
 <text class="number" x="500" y="48">5</text><text class="label" x="500" y="74">Maior sequência</text></svg>
