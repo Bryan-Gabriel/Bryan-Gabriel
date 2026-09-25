@@ -70,13 +70,13 @@ Participo do desenvolvimento de projetos colaborativos como **Hubbix** e **TM Hu
 ## Atividade no GitHub
 
 <!-- PROFILE_STATS_START -->
-![Atividade pública e privada autorizada](assets/profile-activity.svg)
+![Atividade Total](assets/profile-activity.svg)
 
 ## Estatísticas
 
-![Commits, pull requests e issues públicos e privados](assets/profile-contributions.svg)
+![Contribuição Total](assets/profile-contributions.svg)
 
-![Linguagens dos projetos públicos e privados autorizados](assets/profile-languages.svg)
+### Linguagens
 
-<sub>Inclui atividade pública e privados autorizados. Dias ativos: commits, PRs ou issues. Totais do ano em UTC. Nomes dos projetos privados não são publicados.</sub>
+![Linguagens Mais Utilizadas](assets/profile-languages.svg)
 <!-- PROFILE_STATS_END -->
