@@ -8,16 +8,16 @@
 <rect width="720" height="124" fill="#0d1117"/>
 <clipPath id="language-track"><rect x="20" y="8" width="680" height="9" rx="4.5"/></clipPath>
 <g clip-path="url(#language-track)">
-<rect x="20.00" y="8" width="278.58" height="9" fill="#3572a5"/>
-<rect x="298.58" y="8" width="258.61" height="9" fill="#f1e05a"/>
-<rect x="557.19" y="8" width="101.10" height="9" fill="#563d7c"/>
-<rect x="658.29" y="8" width="39.46" height="9" fill="#e34c26"/>
-<rect x="697.76" y="8" width="2.24" height="9" fill="#7ee787"/>
-<rect x="700.00" y="8" width="0.00" height="9" fill="#8b949e"/>
+<rect x="20.00" y="8" width="287.86" height="9" fill="#3572a5"/>
+<rect x="307.86" y="8" width="262.46" height="9" fill="#f1e05a"/>
+<rect x="570.32" y="8" width="103.21" height="9" fill="#563d7c"/>
+<rect x="673.53" y="8" width="24.17" height="9" fill="#e34c26"/>
+<rect x="697.71" y="8" width="2.29" height="9" fill="#7ee787"/>
+<rect x="699.99" y="8" width="0.01" height="9" fill="#8b949e"/>
 </g>
-<circle cx="25" cy="43" r="5" fill="#3572a5"/><text class="label" x="38" y="48">Python</text><text class="percent" x="345" y="48" text-anchor="end">41.0%</text>
-<circle cx="25" cy="71" r="5" fill="#f1e05a"/><text class="label" x="38" y="76">JavaScript</text><text class="percent" x="345" y="76" text-anchor="end">38.0%</text>
-<circle cx="25" cy="99" r="5" fill="#563d7c"/><text class="label" x="38" y="104">CSS</text><text class="percent" x="345" y="104" text-anchor="end">14.9%</text>
-<circle cx="380" cy="43" r="5" fill="#e34c26"/><text class="label" x="393" y="48">HTML</text><text class="percent" x="700" y="48" text-anchor="end">5.8%</text>
+<circle cx="25" cy="43" r="5" fill="#3572a5"/><text class="label" x="38" y="48">Python</text><text class="percent" x="345" y="48" text-anchor="end">42.3%</text>
+<circle cx="25" cy="71" r="5" fill="#f1e05a"/><text class="label" x="38" y="76">JavaScript</text><text class="percent" x="345" y="76" text-anchor="end">38.6%</text>
+<circle cx="25" cy="99" r="5" fill="#563d7c"/><text class="label" x="38" y="104">CSS</text><text class="percent" x="345" y="104" text-anchor="end">15.2%</text>
+<circle cx="380" cy="43" r="5" fill="#e34c26"/><text class="label" x="393" y="48">HTML</text><text class="percent" x="700" y="48" text-anchor="end">3.6%</text>
 <circle cx="380" cy="71" r="5" fill="#7ee787"/><text class="label" x="393" y="76">PowerShell</text><text class="percent" x="700" y="76" text-anchor="end">0.3%</text>
 <circle cx="380" cy="99" r="5" fill="#8b949e"/><text class="label" x="393" y="104">Outras</text><text class="percent" x="700" y="104" text-anchor="end">0.0%</text></svg>
