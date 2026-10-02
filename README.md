@@ -2,9 +2,7 @@
 
 Atualmente em formação na área de **Engenharia de Software**. Tenho interesse em desenvolvimento full stack, automação e cibersegurança.
 
-Participo do desenvolvimento de projetos colaborativos como **Hubbix** e **TM Hub**, conectando minha experiência com processos de negócio à construção de sistemas úteis, seguros e fáceis de usar.
-
-[LinkedIn](https://www.linkedin.com/in/bryan-gabriel-ribeiro-600b07427/)
+Participo do desenvolvimento de projetos colaborativos como **Hubbix**, conectando minha experiência com processos de negócio à construção de sistemas úteis, seguros e fáceis de usar.
 
 ---
 
@@ -58,13 +56,6 @@ Participo do desenvolvimento de projetos colaborativos como **Hubbix** e **TM Hu
 - **Hubbix Panel** — Painel para administrar sites e páginas de clientes.
 
 - **Hubbix Site** — Site institucional em React e Vite, com páginas de apresentação das soluções. Repositório privado.
-
-### TM Hub
-
-- **TM Hub** — Painel executivo full stack em React para centralizar operações administrativas de empresas com múltiplas filiais, com autenticação JWT e controle de acesso por filial.
-
-- **API TM Hub** — API REST em Flask e PostgreSQL que sustenta o TM Hub, com regras de negócio, permissões e eventos em tempo real via Socket.IO.
-
 ---
 
 ## Atividade no GitHub
